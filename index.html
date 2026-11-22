@@ -106,6 +106,51 @@ nav{box-shadow:none;border-top:1px solid var(--bd)}
 .cam #camv{position:absolute;left:0;top:0;width:1px;height:1px;flex:none;opacity:0;pointer-events:none}.camv2{display:block;flex:1;min-height:0;width:100%;object-fit:contain;background:#000;pointer-events:none}.cam.pv .camv2{display:none}
 .camn{position:absolute;top:calc(40px + env(safe-area-inset-top,0px));left:14px;background:#000a;color:#fff;border:1px solid #fff6;border-radius:999px;padding:8px 14px;font-weight:700;font-size:13px}.cam.pv .camn{display:none}.camq{display:none;position:absolute;left:12px;right:12px;bottom:calc(96px + env(safe-area-inset-bottom,0px));background:#000b;color:#fff;border-radius:12px;padding:8px 12px;font-size:12.5px;line-height:1.4;text-align:center}.cam.pv .camq{display:block}.camq.lo{background:#7a4a00ee}
 .btn:disabled{opacity:.45;pointer-events:none}
+
+/* ===== Bottom nav: gelembung hijau melengkung ===== */
+nav{background:none!important;border:0!important;box-shadow:none!important;padding-bottom:0!important;pointer-events:none}
+nav .bn{pointer-events:auto;position:relative;display:flex;max-width:500px;margin:0 auto;padding:0 14px env(safe-area-inset-bottom,0px);height:calc(68px + env(safe-area-inset-bottom,0px));box-sizing:border-box}
+nav .bn-bg{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+nav #bnf{fill:var(--card)}
+nav #bnl{fill:none;stroke:var(--bd);stroke-width:1}
+nav .bn button{flex:1;min-width:0;height:68px;padding:14px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:3px;background:none;border:0;position:relative;z-index:2;color:var(--mu);font-size:10px;font-weight:700;-webkit-tap-highlight-color:transparent;outline:none}
+nav .bn button b{height:22px;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.3,1.4,.5,1),opacity .2s}
+nav .bn button:active b{transform:scale(.85)}
+nav .bn button .l{display:block;white-space:nowrap;transition:transform .35s cubic-bezier(.3,1.3,.5,1),color .2s}
+nav .bn button.on{color:var(--ac)}
+nav .bn button.on b{opacity:0;transform:translateY(12px) scale(.4)}
+nav .bn button.on .l{transform:translateY(10px);font-weight:800}
+nav .bn-bub{position:absolute;left:0;top:-12px;width:52px;height:52px;z-index:3;pointer-events:none;display:block;will-change:transform}
+nav .bn-core{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:linear-gradient(145deg,#19b982,#0b8a56);box-shadow:0 6px 14px rgba(14,159,110,.38),inset 0 1px 0 rgba(255,255,255,.3);transition:transform .25s ease,opacity .2s ease}
+nav .bn-bub.off .bn-core{transform:translateY(16px) scale(.3);opacity:0}
+nav .bn-core.pop{animation:bnpop .62s cubic-bezier(.2,.8,.3,1)}
+nav .bn-ring{position:absolute;left:0;top:0;width:52px;height:52px;border-radius:50%;border:2px solid #0e9f6e;opacity:0;pointer-events:none;display:block}
+nav .bn-ring.go{animation:bnring .7s ease-out .16s}
+nav .bn-rip{position:absolute;top:36px;width:46px;height:46px;border-radius:50%;background:#0e9f6e;pointer-events:none;z-index:1;opacity:0;animation:bnrip .55s ease-out forwards}
+@keyframes bnpop{0%{transform:translateY(18px) scale(.5)}55%{transform:translateY(-5px) scale(1.12)}78%{transform:translateY(1px) scale(.97)}100%{transform:none}}
+@keyframes bnring{0%{transform:scale(.85);opacity:.6}100%{transform:scale(2.2);opacity:0}}
+@keyframes bnrip{0%{transform:translate(-50%,-50%) scale(.2);opacity:.35}100%{transform:translate(-50%,-50%) scale(2.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){nav .bn-core.pop,nav .bn-ring.go,nav .bn-rip{animation:none}}
+#app{padding-bottom:124px}
+.fab{bottom:calc(94px + env(safe-area-inset-bottom,0px))}
+
+/* ===== Cashflow kurva ===== */
+.cfh{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.cfs{display:flex;gap:6px;flex:none}
+.cfs button{border:0;border-radius:999px;padding:5px 11px;font-size:11px;font-weight:700;background:var(--acs);color:var(--ac);font-family:inherit}
+.cfs button.on{background:var(--ac);color:#fff}
+.cfw{position:relative;margin:48px -4px 0}
+.cfw svg{display:block;overflow:visible}
+.cfy{font-size:8.5px;fill:var(--mu)}.cfx{font-size:9px;fill:var(--mu);font-weight:600}.cfx.on{fill:var(--tx);font-weight:800}
+.cfl{stroke-dasharray:1;stroke-dashoffset:1;animation:cfdraw 1.1s ease-out forwards}
+@keyframes cfdraw{to{stroke-dashoffset:0}}
+.cft{position:absolute;transform:translate(-50%,calc(-100% - 14px));background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:6px 10px;font-size:11px;line-height:1.5;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.1);pointer-events:none;display:flex;flex-direction:column;z-index:2}
+.cft .cfd{font-weight:800;color:var(--tx);font-size:11px}
+.cft i,.cfg2 i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.cfg2{display:flex;gap:10px;margin-top:10px}
+.cfg2>div{flex:1;background:var(--bg);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;font-size:11px;color:var(--mu)}
+.cfg2 b{color:var(--tx);font-size:13px;margin-top:2px}
+@media(prefers-reduced-motion:reduce){.cfl{animation:none;stroke-dashoffset:0}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap">
 </head>
@@ -162,15 +207,59 @@ function parse(text){
 function billInfo(b){const y=now.getFullYear(),mo=now.getMonth(),last=new Date(y,mo+1,0).getDate(),d=new Date(y,mo,Math.min(b.day,last)),t0=new Date(y,mo,now.getDate());return{paid:b.paid===cur(),diff:Math.round((d-t0)/864e5)}}
 function billLabel(i){if(i.paid)return['Lunas',''];if(i.diff<0)return['Telat '+(-i.diff)+' hari','r'];if(i.diff===0)return['Hari ini','r'];if(i.diff<=7)return[i.diff+' hari lagi','o'];return[i.diff+' hari lagi','']}
 const dueN=()=>S.bills.filter(b=>{const i=billInfo(b);return!i.paid&&i.diff<=7}).length;
+/* ===== Bottom nav animasi gelembung ===== */
+const BN={cx:0,k:0,idx:-2,n:0,keys:'',raf:0,W:0,H:0},BN_HW=46,BN_DEPTH=46;
+const bnReduce=()=>window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function bnD(cx,k,W,H){const hw=Math.max(8,Math.min(BN_HW,cx,W-cx)),d=BN_DEPTH*k+.5,a=cx-hw,b=cx+hw;
+  const t=`M0 .5H${a.toFixed(2)}C${(cx-hw*.72).toFixed(2)} .5 ${(cx-hw*.76).toFixed(2)} ${d.toFixed(2)} ${cx.toFixed(2)} ${d.toFixed(2)}C${(cx+hw*.76).toFixed(2)} ${d.toFixed(2)} ${(cx+hw*.72).toFixed(2)} .5 ${b.toFixed(2)} .5H${W}`;
+  return{line:t,fill:t+`V${H}H0Z`}}
+function bnPaint(){const f=document.getElementById('bnf');if(!f)return;const d=bnD(BN.cx,BN.k,BN.W,BN.H);
+  f.setAttribute('d',d.fill);document.getElementById('bnl').setAttribute('d',d.line);
+  document.getElementById('bnb').style.transform=`translate3d(${(BN.cx-26).toFixed(2)}px,0,0)`}
+function bnAnim(cx,k,ms){cancelAnimationFrame(BN.raf);
+  if(!ms||bnReduce()){BN.cx=cx;BN.k=k;bnPaint();return}
+  const c0=BN.cx,k0=BN.k,t0=performance.now(),ez=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  const step=now=>{const t=Math.min(1,(now-t0)/ms),e=ez(t);BN.cx=c0+(cx-c0)*e;BN.k=k0+(k-k0)*e;bnPaint();if(t<1)BN.raf=requestAnimationFrame(step)};
+  BN.raf=requestAnimationFrame(step)}
+function bnCenter(i){const b=document.querySelectorAll('#nav button')[i];return b?b.offsetLeft+b.offsetWidth/2:0}
+function bnMeasure(){const el=document.getElementById('nav'),sv=document.getElementById('bnsv');if(!el||!sv)return;
+  BN.W=el.clientWidth;BN.H=el.clientHeight;sv.setAttribute('viewBox',`0 0 ${BN.W} ${BN.H}`)}
+function bnRestart(el){el.classList.remove(el.dataset.c);void el.offsetWidth;el.classList.add(el.dataset.c)}
+function buildNav(tabs,act){
+  const el=document.getElementById('nav'),keys=tabs.map(t=>t[0]).join();
+  const idx=tabs.findIndex(t=>t[0]===act||(act==='info'&&t[0]==='sett'));
+  if(BN.keys!==keys||!el.querySelector('button')){
+    el.className='bn';
+    el.innerHTML='<svg class="bn-bg" id="bnsv" aria-hidden="true"><path id="bnf"/><path id="bnl"/></svg>'
+      +'<span class="bn-bub off" id="bnb"><span class="bn-core" id="bnc" data-c="pop"></span><i class="bn-ring" id="bnr" data-c="go"></i></span>'
+      +tabs.map(t=>`<button onclick="setTab('${t[0]}')" aria-label="${t[2]}"><b>${svg(t[1],22)}</b><span class="l">${t[2]}</span></button>`).join('');
+    BN.keys=keys;BN.n=tabs.length;BN.idx=-2;BN.k=0}
+  bnMeasure();
+  const btns=el.querySelectorAll('button'),bub=document.getElementById('bnb'),core=document.getElementById('bnc'),first=BN.idx===-2,changed=idx!==BN.idx;
+  btns.forEach((b,i)=>b.classList.toggle('on',i===idx));
+  BN.idx=idx;
+  if(idx<0){bub.classList.add('off');if(first){BN.k=0;bnPaint()}else bnAnim(BN.cx,0,300);return}
+  const cx=bnCenter(idx);core.innerHTML=svg(tabs[idx][1],24,2.1);
+  if(first){BN.cx=cx;BN.k=1;bnPaint();bub.classList.remove('off');return}
+  if(!changed)return;
+  const wasOff=bub.classList.contains('off')||BN.k<.05;bub.classList.remove('off');
+  if(wasOff)BN.cx=cx;
+  bnAnim(cx,1,wasOff?360:420);
+  bnRestart(core);bnRestart(document.getElementById('bnr'))}
+(function(){const n=document.getElementById('nav');if(!n)return;
+  n.addEventListener('pointerdown',e=>{const b=e.target.closest&&e.target.closest('button');if(!b||bnReduce())return;
+    const r=document.createElement('i');r.className='bn-rip';r.style.left=(b.offsetLeft+b.offsetWidth/2)+'px';
+    n.appendChild(r);r.addEventListener('animationend',()=>r.remove());setTimeout(()=>r.remove(),900)});
+  addEventListener('resize',()=>{if(BN.idx<0&&BN.idx!==-1)return;bnMeasure();if(BN.idx>=0){BN.cx=bnCenter(BN.idx)}bnPaint()})})();
 function setTab(t){const nd={bills:'bill',budget:'money',rep:'rep',debt:'debt'};if(nd[t]&&!can(nd[t]))t='home';if(t==='fam'&&myRole()==='Anak')t='home';tab=t;render();scrollTo(0,0)}
 function render(){
-  if(!meOk()){document.getElementById('nav').innerHTML='';document.getElementById('fab').style.display='none';document.getElementById('app').innerHTML=pickMe();return}
+  if(!meOk()){document.getElementById('nav').innerHTML='';BN.keys='';document.getElementById('fab').style.display='none';document.getElementById('app').innerHTML=pickMe();return}
   const tabs=[['home','home','Beranda'],['trx','swap','Transaksi'],['goal','flag','Target'],['rep','chart','Laporan'],['fam','family','Keluarga'],['sett','gear','Setting']].filter(t=>myRole()!=='Anak'||['home','trx','goal','sett'].includes(t[0]));
-  document.getElementById('nav').innerHTML=tabs.map(t=>`<button class="${tab===t[0]||(tab==='info'&&t[0]==='sett')?'on':''}" onclick="setTab('${t[0]}')"><b>${svg(t[1],22)}</b>${t[2]}</button>`).join('');
+  buildNav(tabs,tab);
   const T={add:['Catat Transaksi','Pengeluaran dan pemasukan'],budget:['Budget Bulanan','Bagi uang seperti amplop'],bills:['Tagihan','Jangan sampai telat bayar'],trx:['Transaksi','Cari dan filter catatan'],goal:['Target Keuangan','Wujudkan impian keluarga'],rep:['Laporan','Pantau keuangan keluarga'],fam:['Keluarga','Anggota, peran, dan aktivitas'],sett:['Setting','Dompet, kategori, rutin, data'],debt:['Utang & Piutang','Catat pinjaman dan cicilan'],info:INFO_T[infoV]};
   const A=document.getElementById('app');
   A.innerHTML=tab==='home'?home():`<div class="top slim"><div class="hi">${T[tab][0]}</div><div class="sub2">${T[tab][1]}</div></div><div class="pg" style="margin-top:-8px">`+({add,budget,bills,trx,goal,rep,fam,sett,debt,info}[tab])()+'</div>';
-  A.insertAdjacentHTML('beforeend','<div class="cr">Aplikasi by <b>Dompet Bersama</b></div>');
+  A.insertAdjacentHTML('beforeend','<div class="cr">Aplikasi by <b>Dompet Keluarga</b></div>');
   const f=document.getElementById('fab');f.innerHTML=svg('plus',26,2.6);f.style.display=tab==='add'?'none':'flex';
 }
 const go=k=>{draft.mode='out';setTab(k)};
@@ -703,11 +792,34 @@ const months=()=>{const x=new Set([cur()]);S.tx.forEach(t=>x.add(ym(new Date(t.t
 function repData(){const R=rng(),k=R.label,o=S.tx.filter(t=>t.ts>=R.a&&t.ts<R.b&&t.ty!=='tf').sort((a,b)=>a.ts-b.ts),out=o.filter(t=>t.ty==='out'),inn=o.filter(t=>t.ty==='in'),sum=a=>a.reduce((x,t)=>x+t.a,0);
   return{k,n:R.n,all:o,out,inn,tOut:sum(out),tIn:sum(inn),pos:Object.keys(P).map(p=>({p,n:P[p].n,u:sum(out.filter(t=>t.p===p)),b:S.budgets[p]})),mem:S.members.map(m=>({av:AV(m.av),n:m.name,u:sum(out.filter(t=>t.w===m.id))})).filter(x=>x.u>0)}}
 const dm=ts=>{const d=new Date(ts);return String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')};
+/* ===== Cashflow: kurva halus pemasukan vs pengeluaran ===== */
+let cfSel=-1,cfSh='all';
+const cfK=n=>n>=1e9?(n/1e9).toFixed(1).replace('.0','')+'M':n>=1e6?(n/1e6).toFixed(1).replace('.0','')+'jt':n>=1e3?Math.round(n/1e3)+'rb':String(Math.round(n));
+const cfCurve=p=>{let d='M'+p[0][0].toFixed(1)+' '+p[0][1].toFixed(1);for(let i=1;i<p.length;i++){const a=p[i-1],b=p[i],m=((a[0]+b[0])/2).toFixed(1);d+=`C${m} ${a[1].toFixed(1)} ${m} ${b[1].toFixed(1)} ${b[0].toFixed(1)} ${b[1].toFixed(1)}`}return d};
+function cfHtml(an){
+  const ms=buckets(),n=ms.length,ttl='Cashflow '+(rpd==='d'?'7 hari':rpd==='w'?'6 minggu':'6 bulan');
+  const head=`<div class="cfh"><div><b>${ttl}</b><div class="sub">Masuk vs keluar</div></div><div class="cfs">${[['all','Semua'],['in','Masuk'],['out','Keluar']].map(x=>`<button class="${cfSh===x[0]?'on':''}" onclick="cfSet('${x[0]}')">${x[1]}</button>`).join('')}</div></div>`;
+  if(ms.every(m=>!m.i&&!m.o))return`<div class="card" id="cfc">${head}<div class="empty">Belum ada pemasukan atau pengeluaran pada periode ini.</div></div>`;
+  const W=320,H=156,L=32,R=12,T=14,B=24,pw=W-L-R,ph=H-T-B,top=Math.max(1,...ms.map(m=>Math.max(m.i,m.o))),mx=top*1.12;
+  const X=i=>n>1?L+pw*i/(n-1):L+pw/2,Y=v=>T+ph-v/mx*ph;
+  if(cfSel<0||cfSel>=n)cfSel=n-1;
+  const sr=[['in','Pemasukan','var(--ac)','i'],['out','Pengeluaran','var(--rd)','o']].filter(x=>cfSh==='all'||cfSh===x[0]).map(x=>({k:x[0],n:x[1],c:x[2],f:x[3],pts:ms.map((m,i)=>[X(i),Y(m[x[3]])])}));
+  const grid=[0,.5,1].map(t=>{const y=Y(top*t);return`<line x1="${L}" x2="${W-R}" y1="${y}" y2="${y}" stroke="var(--bd)" stroke-width="1" ${t?'stroke-dasharray="3 4"':''}/><text x="${L-6}" y="${y+3}" text-anchor="end" class="cfy">${cfK(top*t)}</text>`}).join('');
+  const lines=sr.map(q=>{const d=cfCurve(q.pts);return`<path d="${d}" pathLength="1" class="${an?'cfl':''}" fill="none" stroke="${q.c}" stroke-width="7" stroke-linecap="round" opacity=".22" filter="url(#cfg)"/><path d="${d}" pathLength="1" class="${an?'cfl':''}" fill="none" stroke="${q.c}" stroke-width="2.6" stroke-linecap="round"/>`}).join('');
+  const sx=X(cfSel),dots=sr.map(q=>{const y=q.pts[cfSel][1];return`<circle cx="${sx}" cy="${y}" r="9" fill="${q.c}" opacity=".18"/><circle cx="${sx}" cy="${y}" r="4.5" fill="${q.c}" stroke="var(--card)" stroke-width="2"/>`}).join('');
+  const xl=ms.map((m,i)=>`<text x="${X(i)}" y="${H-6}" text-anchor="middle" class="cfx ${i===cfSel?'on':''}">${m.l}</text>`).join('');
+  const hit=ms.map((m,i)=>{const w=n>1?pw/(n-1):pw;return`<rect x="${X(i)-w/2}" y="0" width="${w}" height="${H}" fill="transparent" onclick="cfPick(${i})"/>`}).join('');
+  const minY=Math.min(...sr.map(q=>q.pts[cfSel][1])),lp=Math.min(80,Math.max(20,sx/W*100));
+  const tip=`<div class="cft" style="left:${lp}%;top:${minY/H*100}%"><span class="cfd">${ms[cfSel].l}</span>${sr.map(q=>`<span><i style="background:${q.c}"></i>${q.n} <b style="color:${q.c}">${rp(ms[cfSel][q.f])}</b></span>`).join('')}</div>`;
+  const tin=ms.reduce((a,m)=>a+m.i,0),tout=ms.reduce((a,m)=>a+m.o,0);
+  return`<div class="card" id="cfc">${head}<div class="cfw"><svg viewBox="0 0 ${W} ${H}" width="100%"><defs><filter id="cfg" x="-10%" y="-40%" width="120%" height="180%"><feGaussianBlur stdDeviation="3.5"/></filter></defs>${grid}<line x1="${sx}" x2="${sx}" y1="${T}" y2="${T+ph}" stroke="var(--mu)" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>${lines}${dots}${xl}${hit}</svg>${tip}</div>
+  <div class="cfg2"><div><i style="background:var(--ac)"></i><span>Pemasukan</span><b>${rp(tin)}</b></div><div><i style="background:var(--rd)"></i><span>Pengeluaran</span><b>${rp(tout)}</b></div></div></div>`}
+const cfRefresh=()=>{const e=document.getElementById('cfc');if(e)e.outerHTML=cfHtml(0)};
+const cfPick=i=>{cfSel=i;cfRefresh()},cfSet=v=>{cfSh=v;cfRefresh()};
 let rv='cf';
 const rw2=(a,t,u,r)=>`<div class="rw"><div class="av">${a}</div><div class="m"><b>${t}</b><span class="sub">${u||''}</span></div>${r||''}</div>`;
 function rep(){const Q=rng(),d=repData(),tot=d.tOut||1,pc=u=>Math.round(u/tot*100),bt=n=>`<b>${rp(n)}</b>`;let b='';
-  if(rv==='cf'){const ms=buckets(),mx=Math.max(1,...ms.map(m=>Math.max(m.i,m.o)));
-    b=`<div class="card"><b>Cashflow ${rpd==='d'?'7 hari':rpd==='w'?'6 minggu':'6 bulan'}</b><div style="display:flex;gap:6px;margin-top:12px">${ms.map(m=>`<div style="flex:1;text-align:center"><div style="display:flex;gap:3px;justify-content:center;align-items:flex-end;height:104px"><i style="width:11px;height:${m.i/mx*100}%;background:var(--ac);border-radius:4px 4px 0 0"></i><i style="width:11px;height:${m.o/mx*100}%;background:var(--rd);border-radius:4px 4px 0 0"></i></div><div class="sub">${m.l}</div></div>`).join('')}</div><div class="sub" style="margin-top:8px"><span class="up">■</span> Pemasukan &nbsp; <span class="dn">■</span> Pengeluaran</div></div>`}
+  if(rv==='cf')b=cfHtml(1);
   else if(rv==='pg')b=`<div class="card" style="padding:4px 14px"><div style="padding:10px 0 2px"><b>Pengeluaran terbesar</b></div>${d.out.slice().sort((a,b)=>b.a-a.a).slice(0,10).map(t=>`<div class="rw">${ico(t)}<div class="m"><b>${esc(t.note)}</b><span class="sub">${dm(t.ts)} • ${cn(t)} • ${esc(mem(t.w).name)}</span></div><b class="dn">-${rp(t.a)}</b></div>`).join('')||'<div class="empty">Belum ada pengeluaran.</div>'}</div>`;
   else if(rv==='bv')b=`<div class="card"><b>Budget vs actual</b>${d.pos.map(x=>{const p=x.b?Math.round(x.u/x.b*100):0;return`<div class="rw pos"><div class="av" style="color:var(--c-${x.p})">${P[x.p].e}</div><div class="m"><div class="row"><b>${x.n}</b><span class="pc ${p>100?'r':p>=80?'o':''}">${p}%</span></div><div class="sub">${rp(x.u)} dari ${rp(x.b||0)}${x.b&&x.u>x.b?' · lewat '+rp(x.u-x.b):''}</div><div class="bar" style="margin-top:5px"><i style="width:${Math.min(100,p)}%;background:${p>100?'var(--rd)':'var(--c-'+x.p+')'}"></i></div></div></div>`}).join('')}</div>`;
   else if(rv==='an')b=`<div class="card"><b>Per anggota</b>${d.mem.map(m=>rw2(m.av,esc(m.n),pc(m.u)+'% dari pengeluaran',bt(m.u))).join('')||'<div class="empty">Belum ada data.</div>'}</div>`;
@@ -718,7 +830,7 @@ function rep(){const Q=rng(),d=repData(),tot=d.tOut||1,pc=u=>Math.round(u/tot*10
   <div class="row"><div><div class="sub">Pengeluaran</div><b class="dn" style="font-size:20px">${rp(d.tOut)}</b></div><div style="text-align:right"><div class="sub">Pemasukan</div><b class="up" style="font-size:20px">${rp(d.tIn)}</b></div></div><div class="sub" style="margin-top:8px">${d.k} · Selisih: <b style="color:var(--tx)">${rp(d.tIn-d.tOut)}</b></div>
   <button class="btn" style="margin-top:12px" onclick="shareRep()">Bagikan laporan</button></div>
   <div class="chips sc">${[['cf','Cashflow'],['pg','Pengeluaran'],['st','Struk'],['bv','Budget vs Actual'],['an','Per Anggota'],['kt','Per Kategori'],['rk','Per Rekening']].map(c=>`<span class="chip ${rv===c[0]?'on':''}" onclick="rv='${c[0]}';render()">${c[1]}</span>`).join('')}</div>${b}`}
-function repText(d){return'Laporan Keuangan Keluarga ('+d.n+') - '+d.k+'\nPemasukan: '+rp(d.tIn)+'\nPengeluaran: '+rp(d.tOut)+'\n\nPer pos:\n'+d.pos.map(x=>'- '+x.n+': '+rp(x.u)+(x.b?' (budget '+rp(x.b)+')':'')).join('\n')+(d.all.length&&d.all.length<=25?'\n\nRincian:\n'+d.all.map(t=>dm(t.ts)+' '+(t.ty==='in'?'+':'-')+rp(t.a)+' '+t.note).join('\n'):'')+'\n\nDicatat lewat Dompet Keluarga - aplikasi by Dompet Bersama'}
+function repText(d){return'Laporan Keuangan Keluarga ('+d.n+') - '+d.k+'\nPemasukan: '+rp(d.tIn)+'\nPengeluaran: '+rp(d.tOut)+'\n\nPer pos:\n'+d.pos.map(x=>'- '+x.n+': '+rp(x.u)+(x.b?' (budget '+rp(x.b)+')':'')).join('\n')+(d.all.length&&d.all.length<=25?'\n\nRincian:\n'+d.all.map(t=>dm(t.ts)+' '+(t.ty==='in'?'+':'-')+rp(t.a)+' '+t.note).join('\n'):'')+'\n\nDicatat lewat Dompet Keluarga'}
 async function shareRep(){const text=repText(repData(repM));
   try{if(navigator.share){await navigator.share({title:'Laporan Keuangan Keluarga',text});return}}catch(e){if(e&&e.name==='AbortError')return}
   try{await navigator.clipboard.writeText(text);alert('Ringkasan disalin. Tempel di WhatsApp atau chat lain.');return}catch(e){}
